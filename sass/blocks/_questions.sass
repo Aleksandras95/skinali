@@ -1,0 +1,18 @@
+.questions
+    padding-top: 90px
+    padding-bottom: 90px
+    &__title
+        font-size: 30px
+        +bold
+    &__link
+        font-size: 16px
+    &-block
+        max-width: 800px
+        margin: auto
+        display: flex
+        align-items: center
+        justify-content: space-around
+@media (max-width: 768px)
+    .questions
+        &-block
+            flex-direction: column

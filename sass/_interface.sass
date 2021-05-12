@@ -1,0 +1,86 @@
+body
+    +light
+    color: $text-color
+img
+    max-width: 100%
+.section
+    &-title
+        font-size: 30px
+        +bold
+        text-align: center
+        text-transform: uppercase
+    &__title
+        margin-bottom: 110px
+.button-o
+    border: 2px solid $primary
+    padding: 17px 22px
+    background-color: transparent
+    font-size: 12px
+    color: $primary
+    +bold
+    text-transform: uppercase
+    cursor: pointer
+.button
+    border: none
+    text-transform: uppercase
+    text-decoration: none
+    padding: 17px 45px
+    background-color: $primary
+    color: #fff
+    +bold
+    &:hover
+        cursor: pointer
+    &-fitting
+        background-color: #ffffff
+        color: $primary
+    &-add
+        background-color: lighten($primary, 10%)
+        color: #fff
+    &-like
+        height: 30px
+        width: 30px
+        background-color: $primary
+        border: none
+.bg-secondary
+    background: $bg-secondary
+.input
+    height: 55px
+    padding-left: 30px
+    border: 1px solid #dddddd
+input[type="checkbox"]
+    display: none
+    &:checked + label:before
+            background-color: $primary
+.checkbox
+    &-label
+        display: flex
+        align-items: center
+        margin-right: 40px
+        &:hover
+            cursor: pointer
+        &:before
+            content: ''
+            width: 20px
+            height: 20px
+            border: 1px solid #dddddd
+            margin-right: 20px
+.navbar__button
+    transition: all 0.5s ease
+    &:hover
+        border: 2px solid #133b92
+        background-color: #133b92
+        color: #ffffff
+.button-h
+    transition: all 0.5s ease
+    &:hover
+        background-color: #133b92
+@media (max-width: 576px)
+    .button
+        font-size: 10px
+        &-o
+            font-size: 10px
+    .section
+        padding-top: 60px
+        padding-bottom: 60px
+        &-title
+            font-size: 24px
