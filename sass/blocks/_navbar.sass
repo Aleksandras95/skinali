@@ -4,7 +4,7 @@
     top: 0
     width: 100%
     background-color: #fff
-    z-index: 99
+    z-index: 101
     &-wrap
         display: flex
         align-items: center
@@ -26,9 +26,8 @@
         text-decoration: none
         
 .menu
-    display: none
     position: fixed
-    z-index: 2
+    z-index: 100
     top: 80px
     left: 0
     width: 100%
@@ -36,7 +35,9 @@
     background-color: $primary
     transform: translateY(-100%)
     transition: 0.2s
+    opacity: 0
     &_active
+        opacity: 1
         transform: translateY(0)
     &__link
         text-decoration: none
@@ -57,8 +58,16 @@
        width: 70px
        transition: all 0.5s ease
        cursor: pointer
+       &:focus
+           outline: none
        &:hover &__line
            background-color: #133b92
+           &-second
+               width: 20px
+               left: 0
+           &-third
+               width: 20px
+               left: 0
        &__line 
            display: block
            width: 20px
@@ -66,9 +75,19 @@
            background-color: #89a9eb
            margin: 2px 0
            transition: all 0.5s ease
+           &-second
+               width: 10px
+               position: relative
+               left: -5px
+           &-third
+               width: 5px
+               position: relative
+               left: -7px
+            
+            
+            
 .menu__nav
     display: flex
-    display: none
     align-items: center
     justify-content: space-around
 .logo
@@ -86,11 +105,11 @@
     .navbar
         &__mobile, &__landline
             display: none
+    .menu
+        &__link
+            margin-bottom: 20px
+        &__nav
+            flex-direction: column 
 @media (max-width: 576px)
     .logo
         display: none
-    .menu
-        &__nav
-            flex-direction: column
-        &__link
-            margin-bottom: 20px

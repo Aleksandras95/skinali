@@ -11,17 +11,26 @@
     &-card
         max-width: 570px
         position: relative
+        overflow-y: hidden
+        &:hover
+            .catalog-card__buttons
+                transform: translateY(0)
+                opacity: 1
         &__buttons
+            display: flex
             position: absolute
             bottom: 20px
             right: 22px
-            display: flex
+            transition: all 0.5s ease
+            opacity: 0
+            transform: translateY(100%)
         &__button
             height: 30px
             padding: 10px
             text-transform: uppercase
             border: none
             font-size: 11px
+            cursor: pointer
         &__tag
             position: absolute
             top: 22px
@@ -50,3 +59,9 @@
             &__buttons
                 bottom: 17px
                 right: 18px
+@media (max-width: 768px)
+    .catalog
+        &-block
+            &-card
+                &__image
+                    height: 200px

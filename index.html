@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Skinali Gamybą Lietuvoje</title>
-    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -26,9 +26,9 @@
             <div class="container">
                 <div class="navbar-wrap">
                     <button class="menu-button navbar__menu-button">
-                        <span class="menu-button__line"></span>
-                        <span class="menu-button__line"></span>
-                        <span class="menu-button__line"></span>
+                        <span class="menu-button__line menu-button__line-first"></span>
+                        <span class="menu-button__line menu-button__line-second"></span>
+                        <span class="menu-button__line menu-button__line-third"></span>
                     </button>
                     <div class="logo navbar__logo">
                         <strong class="logo__text">Skinali Fabrikas Nº1</strong>
@@ -43,7 +43,7 @@
                         <a class="navbar__phone" href="#">+37066611111</a>
                         <a class="navbar__email navbar__small-text" href="#">info@skinali.lt</a>
                     </div>
-                    <button class="button-o navbar__button">Gauti konsultaciją</button>
+                    <button type="button" class="button-o navbar__button">Gauti konsultaciją</button>
                 </div>
                 <!-- /.navbar-wrap -->
             </div>
@@ -58,7 +58,7 @@
                 <span class="hero__subtitle">
                     Nuo 32 € /m<sup>2</sup>
                 </span>
-                <button class="button  button-h hero__button">Užsisakyti</button>
+                <a href="#offer" class="button  button-h hero__button">Užsisakyti</a>
             </div>
             <!-- /.container -->
         </div>
@@ -66,7 +66,7 @@
     </header>
     <!-- /.header -->
     <main>
-        <section class="offer bg-secondary">
+        <section id="offer" class="offer bg-secondary">
             <div class="container">
                 <div class="offer__block offer-block offer-block_calc-bg">
                     <h2 class="offer__title">Palikite užklausą</h2>
@@ -76,7 +76,14 @@
                         <div class="form__group">
                             <label for="" class="form__label">Stiklo tipas</label> 
                             <!-- /.form__label -->
-                            <input type="text" class="input form__input">
+                            <input type="hidden" name="type" id="select-type" value="OptiWhite stiklas">
+                            <div class="select form__select">
+                                <div class="select_checked">OptiWhite stiklas</div>
+                                <ul class="select__dropdown">
+                                    <li class="select__option" data-value="OptiWite stiklas">OptiWite stiklas</li>
+                                    <li class="select__option" data-value="Paprastas stiklas">Paprastas stiklas</li>
+                                </ul>
+                            </div>
                         </div>
                         <!-- /.form__group -->
                         <div class="form__group">
@@ -508,7 +515,42 @@
                 </div>
             </div>
         </section>
-
+        <section class="section before">
+            <div class="container">
+                <h2 class="section-title section__title">Prieš ir po</h2>
+                <div class="before-slider-wrap">
+                    <div class="before-slider" id="before-slider">
+                        <div class="before-slider__item">
+                            <div id="before-after" class="before-after">
+                                <img src="img/before-after/before-img1.jpg" class="before__image" alt="before">
+                                <img src="img/before-after/after-img1.jpg" class="before__image" alt="after">
+                            </div>
+                        </div>
+                        <div class="before-slider__item">
+                            <div id="before-after-second" class="before-after">
+                                <img src="img/before-after/before-img2.jpg" class="before__image" alt="before">
+                                <img src="img/before-after/after-img2.jpg" class="before__image" alt="after">
+                            </div>
+                        </div>
+                        <div class="before-slider__item">
+                            <div id="before-after-third" class="before-after">
+                                <img src="img/before-after/before-img3.jpg" class="before__image" alt="before">
+                                <img src="img/before-after/after-img3.jpg" class="before__image" alt="after">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="before-slider-arrows">
+                        <button class="arrow arrow-left">
+                            <img src="img/previous.png" alt="prev">
+                        </button>
+                        <button class="arrow arrow-right">
+                            <img src="img/next.png" alt="next">
+                        </button>
+                    </div>
+                </div>
+                <!-- /.before-slider-wrap -->
+            </div>
+        </section>
         <section class="section reviews">
             <div class="container">
                 <h2 class="section-title section__title">Klientu atsiliepimai</h2>
@@ -654,5 +696,45 @@
             </div>
         </div>
     </footer>
+    <!---Modal window--->
+  <div class="modal-wrapper" id="wrapper-modal">
+    <!-- <div id="overlay"></div> -->
+    <div class="modal-window" id="modal-window">
+      <div class="modal-content">
+            <button type="button" id="modal-btn-close" class="btn modal-btn-close">
+                <img class="close-btn" src="img/close.png" alt="Close">
+            </button>
+            <h2 class="modal-title">Užsisakyti konsultaciją</h2>
+            <form action="forms/contact.php" id="modalForm" method="post" role="form" class="php-email-form">
+              <div class="row">
+                <div class="col form-group">
+                  <input type="text" name="name" class="modal-form-control" id="name" placeholder="Jūsų vardas" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <input type="email" class="modal-form-control" name="email" id="email" placeholder="Jūsų el. paštas" required>
+              </div>
+              <div class="form-group">
+                <input type="tel" class="modal-form-control" name="phone" id="phone" placeholder="Jūsų tel. numeris" required>
+              </div>
+              <button class="modal-submit-btn" type="submit" data-submit>Užsisakyti</button>
+            </form>
+          </div>
+    </div>
+    <div class="thanks-window text-center">
+      <h2 class="thanks-window-title">Ačiū kad pasirinkotė mūs!</h2>
+      <p class="thanks-window-desc">Netrukus su jumis susisieksime.</p>
+      <button id="thanks-btn-close" class="thanks-btn" type="submit" data-submit>Uždaryti</button>
+  </div>
+</div>
+    <link rel="stylesheet" href="slick/slick.css">
+    <link rel="stylesheet" href="slick/slick-theme.css">
+    <link rel="stylesheet" href="twentytwenty/twentytwenty.css">
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/jquery.event.move.js"></script>
+    <script src="js/jquery.twentytwenty.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

@@ -1,0 +1,133 @@
+/* Modal */
+.modal
+    &-wrapper
+        display: none
+        position: fixed
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        z-index: 1000
+        background: rgba(209, 209, 209, 0.85)
+        cursor: pointer
+    &-form-control
+        width: 350px
+        height: 40px
+        font-weight: 500
+        font-size: 17px
+        line-height: 24px
+        letter-spacing: 0.02em
+        color: #868686
+        border: none
+        border-bottom: 1px solid #d9d9d9
+        margin-bottom: 35px
+        outline: none
+    &-window
+        display: none
+        position: fixed
+        top: 55%
+        left: 50%
+        transform: translate(-50%,-50%)
+        max-width: 500px
+        width: 100%
+        z-index: 100
+        background: #FFFFFF
+        box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.09)
+        cursor: default
+    &-content
+        padding: 70px
+    &-submit-btn
+        background-color: $primary
+        padding: 22px 0
+        width: 351px
+        +bold
+        text-transform: uppercase
+        font-size: 17px
+        line-height: 24px
+        text-align: center
+        letter-spacing: 0.02em
+        color: #FFFFFF
+        border: none
+        cursor: pointer
+        transition: all 0.5s ease
+        &:hover
+            background: #133b92
+    &-btn-close
+        background: none
+        border: none
+        outline: none
+        img
+            display: block
+            position: absolute
+            width: 14.5px
+            height: 14.5px
+            background-color: transparent
+            right: 31.5px
+            top: 32px
+            outline: none
+            border: none
+            cursor: pointer
+            transition: all 0.5s ease
+    &-title
+        font-style: normal
+        +bold
+        font-size: 25px
+        line-height: 35px
+        letter-spacing: 0.02em
+        color: #000000
+        margin-bottom: 35px
+.thanks
+    &-window
+        display: none
+        position: fixed
+        top: 55%
+        left: 50%
+        transform: translate(-50%,-50%)
+        max-width: 700px
+        padding: 70px
+        z-index: 100
+        background: #FFFFFF
+        box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.09)
+        cursor: default
+        &-title
+            font-style: normal
+            +bold
+            font-size: 25px
+            line-height: 35px
+            letter-spacing: 0.02em
+            color: #000000
+            margin-bottom: 35px
+        &-desc
+            font-style: normal
+            font-weight: 500
+            font-size: 21px
+            line-height: 35px
+            letter-spacing: 0.02em
+            color: #000000
+            margin-bottom: 35px
+    &-btn
+        background-color: $primary
+        padding: 22px 50px
+        display: block
+        border: none
+        outline: none
+        cursor: pointer
+        margin: 0 auto
+        +bold
+        text-transform: uppercase
+        font-size: 17px
+        line-height: 24px
+        letter-spacing: 0.02em
+        color: #fff
+        transition: all 0.5s ease
+        &:hover
+            background: #133b92
+#name-error,
+#email-error,
+#phone-error
+    position: relative
+    top: -20px
+@media (max-width: 768px)
+    .modal
+        &-window
+            width: 70%
